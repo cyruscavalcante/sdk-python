@@ -24,7 +24,7 @@ setup(
     description='',
     license='MIT',
     keywords='',
-    url='',
+    url='https://github.com/maxipago/sdk-python',
     packages=['maxipago'],
     long_description=read_file('README.md'),
     classifiers=[
@@ -32,6 +32,6 @@ setup(
     ],
     install_requires=[
         'requests==1.1.0',
-        'lxml==3.1.0',
+        'lxml==4.1.1',
     ],
 )

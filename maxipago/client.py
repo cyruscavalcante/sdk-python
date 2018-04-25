@@ -15,8 +15,8 @@ class Maxipago(object):
             module = __import__('maxipago.managers.{0}'.format(name), fromlist=[''])
             klass = getattr(module, class_name)
             return klass(self.maxid, self.api_key, self.api_version, self.sandbox)
-        except ImportError, AttributeError:
+        except ImportError:
             if name in self.__dict__:
                 return self.__dict__.get('name')
-            else:
-                raise AttributeError
+        except AttributeError:
+            raise AttributeError

@@ -3,3 +3,10 @@
 .DS_Store*
 ._*
 .project
+
+build/
+dist/
+maxipago.egg-info/
+maxipago1.0.0.egg-info/
+tutorial_env/
+
