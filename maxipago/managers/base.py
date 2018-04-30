@@ -3,7 +3,6 @@ import requests
 from maxipago.exceptions import HttpErrorException
 from maxipago.utils import etree, create_element_recursively
 
-
 class Manager(object):
     api_type = None
 
@@ -49,7 +48,7 @@ class ManagerApi(Manager):
             params = requester.translated_data
 
         root = etree.Element('api-request')
-
+        
         verification = etree.SubElement(root, 'verification')
         etree.SubElement(verification, 'merchantId').text = self.maxid
         etree.SubElement(verification, 'merchantKey').text = self.api_key

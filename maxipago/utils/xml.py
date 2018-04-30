@@ -1,22 +1,25 @@
 # coding: utf-8
 
 try:
-    from lxml import etree
+  from lxml import etree
 except ImportError:
+  try:
+    # Python 2.5
+    import xml.etree.cElementTree as etree
+  except ImportError:
     try:
-        # Python 2.5
-        import xml.etree.cElementTree as etree
+      # Python 2.5
+      import xml.etree.ElementTree as etree
     except ImportError:
+      try:
+        # normal cElementTree install
+        import cElementTree as etree
+      except ImportError:
         try:
-            # Python 2.5
-            import xml.etree.ElementTree as etree
+          # normal ElementTree install
+          import elementtree.ElementTree as etree
         except ImportError:
-            try:
-                # normal cElementTree install
-                import cElementTree as etree
-            except ImportError:
-                import elementtree.ElementTree as etree
-                # raises ImportError
+          print("Failed to import ElementTree from any known place")
 
 
 def create_element_recursively(parent, path):

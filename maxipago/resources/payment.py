@@ -1,5 +1,8 @@
 # coding: utf-8
-from StringIO import StringIO
+try:
+    from StringIO import StringIO
+except ImportError:
+    from io import StringIO
 from maxipago.utils import etree
 from maxipago.resources.base import Resource
 from maxipago.exceptions import PaymentException

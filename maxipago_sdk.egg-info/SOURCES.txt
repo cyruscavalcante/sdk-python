@@ -1,0 +1,10 @@
+README.md
+setup.py
+maxipago/__init__.py
+maxipago/client.py
+maxipago/exceptions.py
+maxipago_sdk.egg-info/PKG-INFO
+maxipago_sdk.egg-info/SOURCES.txt
+maxipago_sdk.egg-info/dependency_links.txt
+maxipago_sdk.egg-info/requires.txt
+maxipago_sdk.egg-info/top_level.txt

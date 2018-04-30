@@ -17,14 +17,14 @@ def get_version():
 
 
 setup(
-    name='maxipago',
+    name='maxipago-sdk',
     version=get_version(),
     author='Stored',
     author_email='contato@stored.com.br',
-    description='',
+    description='SDK python',
     license='MIT',
     keywords='',
-    url='https://github.com/maxipago/sdk-python',
+    url='https://github.com/tfedatto/sdk-python',
     packages=['maxipago'],
     long_description=read_file('README.md'),
     classifiers=[
