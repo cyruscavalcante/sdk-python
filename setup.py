@@ -1,7 +1,7 @@
 # coding: utf-8
 import re
 import os
-from setuptools import setup
+from setuptools import setup, find_packages
 
 
 def read_file(fname):
@@ -25,7 +25,7 @@ setup(
     license='MIT',
     keywords='',
     url='https://github.com/tfedatto/sdk-python',
-    packages=['maxipago'],
+    packages=find_packages(where='maxipago*', exclude=['contrib', 'docs', 'tests']),
     long_description=read_file('README.md'),
     classifiers=[
         "Topic :: Utilities",
