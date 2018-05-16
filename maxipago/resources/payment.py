@@ -1,8 +1,5 @@
 # coding: utf-8
-try:
-    from StringIO import StringIO
-except ImportError:
-    from io import StringIO
+from io import BytesIO
 from maxipago.utils import etree
 from maxipago.resources.base import Resource
 from maxipago.exceptions import PaymentException
@@ -14,15 +11,15 @@ class PaymentResource(Resource):
         self.approved = False
         self.authorized = False
         self.captured = False
-
-        tree = etree.parse(StringIO(self.data))
+    
+        tree = etree.parse(BytesIO(self.data))
         error_code = tree.find('errorCode')
         if error_code is not None and error_code.text != '0':
             error_message = tree.find('errorMsg').text
             raise PaymentException(message=error_message)
 
         processor_code = tree.find('processorCode')
-
+        
         if processor_code.text is not None and processor_code.text.lower() == 'a':
             self.approved = True
 
@@ -37,6 +34,7 @@ class PaymentResource(Resource):
             ('transactionTimestamp', 'transaction_timestamp'),
             ('boletoUrl', 'boleto_url'),
             ('responseCode', 'response_code'),
+            ('errorMessage', 'error_message'),
         ]
 
         for f_name, f_translated in fields:

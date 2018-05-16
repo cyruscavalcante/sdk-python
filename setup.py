@@ -2,6 +2,8 @@
 import re
 import os
 from setuptools import setup, find_packages
+from codecs import open
+
 
 
 def read_file(fname):
@@ -25,13 +27,13 @@ setup(
     license='MIT',
     keywords='',
     url='https://github.com/tfedatto/sdk-python',
-    packages=find_packages(where='maxipago*', exclude=['contrib', 'docs', 'tests']),
+    packages=find_packages(exclude=['contrib', 'docs', 'tests']),
     long_description=read_file('README.md'),
     classifiers=[
         "Topic :: Utilities",
     ],
     install_requires=[
-        'requests==1.1.0',
+        'requests==2.18.4',
         'lxml==4.1.1',
     ],
 )

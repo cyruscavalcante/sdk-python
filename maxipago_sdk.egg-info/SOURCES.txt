@@ -1,5 +1,4 @@
 README.md
-setup.py
 maxipago/__init__.py
 maxipago/client.py
 maxipago/exceptions.py
