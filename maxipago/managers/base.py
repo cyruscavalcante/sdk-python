@@ -86,12 +86,12 @@ class ManagerTransaction(Manager):
         order = etree.SubElement(root, 'order')
 
         command = etree.SubElement(order, command)
-
+       
         for key, value in params:
-            create_element_recursively(command, key).text = value
+            create_element_recursively(command, key).text = str(value)
 
         xml_data = etree.tostring(root, pretty_print=True, encoding='UTF-8', xml_declaration=True)
-
+        
         response = self.request(xml_data)
         if resource:
             return resource(data=response.content, requester=requester, manager=self)

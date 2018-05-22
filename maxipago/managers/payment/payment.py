@@ -129,6 +129,8 @@ class PaymentManager(ManagerTransaction):
         fields = (
             ('processor_id', {'translated_name': 'processorID'}),
             ('reference_num', {'translated_name': 'referenceNum'}),
+            ('customerid_ext', {'translated_name': 'customerIdExt'}),
+            
             ('ip_address', {'translated_name': 'ipAddress', 'required': False}),
 
             ('billing_name', {'translated_name': 'billing/name'}),
@@ -140,6 +142,7 @@ class PaymentManager(ManagerTransaction):
             ('billing_country', {'translated_name': 'billing/country', 'required': False}),
             ('billing_phone', {'translated_name': 'billing/phone', 'required': False}),
             ('billing_email', {'translated_name': 'billing/email', 'required': False}),
+            ('billing_company_name', {'translated_name': 'billing/companyName', 'required': False}),
 
             ('shipping_name', {'translated_name': 'shipping/name', 'required': False}),
             ('shipping_address', {'translated_name': 'shipping/address', 'required': False}),
