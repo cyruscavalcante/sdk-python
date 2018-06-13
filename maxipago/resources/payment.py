@@ -33,8 +33,20 @@ class PaymentResource(Resource):
             ('referenceNum', 'reference_num'),
             ('transactionTimestamp', 'transaction_timestamp'),
             ('boletoUrl', 'boleto_url'),
+            ('processorCode', 'processor_code'),
             ('responseCode', 'response_code'),
+            ('processorTransactionID', 'processor_transaction_id'),
+            ('processorReferenceNumber', 'processor_reference_number'),
             ('errorMessage', 'error_message'),
+            ('avsResponseCode', 'avs_response_code'),
+            ('processorMessage', 'processor_message'),
+            ('processorName', 'processor_name'),
+            ('onlineDebitURL', 'online_debit_url'),
+            ('authenticationURL', 'authentication_url'),
+            ('creditCardBin', 'credit_card_bin'),
+            ('creditCardLast4', 'credit_card_last_4'),
+            ('creditCardCountry', 'credit_card_coutry'),
+            ('creditCardScheme', 'credit_card_scheme'),
         ]
 
         for f_name, f_translated in fields:
@@ -43,9 +55,11 @@ class PaymentResource(Resource):
                 setattr(self, f_translated, field.text)
 
         response_message = tree.find('responseMessage')
+        
         if response_message is not None and response_message.text:
             response_message = response_message.text.lower()
-
+            self.response_message = response_message
+    
             if response_message == 'authorized':
                 self.authorized = True
             elif response_message == 'captured':

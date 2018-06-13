@@ -1,4 +1,4 @@
-TEST, REDECARD, AMEX, CIELO, TEF, CHASEPAYMENTECH, BOLETO = '1', '2', '3', '4', '5', '8', '11'
+TEST, REDECARD, AMEX, CIELO, TEF, CHASEPAYMENTECH, BSITAU, BSBRADESCO= '1', '2', '3', '4', '5', '8', '11', '12'
 
 PROCESSORS_CHOICES = (
     (TEST, 'Simulador de testes'),
@@ -7,5 +7,6 @@ PROCESSORS_CHOICES = (
     (CIELO, 'Cielo'),
     (TEF, 'TEF'),
     (CHASEPAYMENTECH, 'ChasePaymentech'),
-    (BOLETO, 'Boleto')
+    (BSITAU, 'BSItau'),
+    (BSBRADESCO, 'BSBradesco'),
 )
