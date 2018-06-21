@@ -157,7 +157,8 @@ class PaymentManager(ManagerTransaction):
             ('expiration_date', {'translated_name': 'transactionDetail/payType/boleto/expirationDate'}),
             ('number', {'translated_name': 'transactionDetail/payType/boleto/number'}),
             ('instructions', {'translated_name': 'transactionDetail/payType/boleto/instructions', 'required': False}),
-
+            ('format', {'translated_name': 'transactionDetail/payType/boleto/format', 'required': False}),
+            
             ('charge_total', {'translated_name': 'payment/chargeTotal'}),
         )
 

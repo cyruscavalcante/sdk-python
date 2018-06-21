@@ -21,8 +21,11 @@ class PaymentRecurringManager(ManagerTransaction):
 
             ('recurring_action', {'translated_name': 'recurring/action', 'default': 'new'}),
             ('recurring_start', {'translated_name': 'recurring/startDate'}),
+            ('recurring_last', {'translated_name': 'recurring/lastDate'}),
             ('recurring_frequency', {'translated_name': 'recurring/frequency'}),
             ('recurring_period', {'translated_name': 'recurring/period'}),
+            ('recurring_first_amount', {'translated_name': 'recurring/firstAmount'}),
+            ('recurring_last_amount', {'translated_name': 'recurring/lastAmount'}),
             ('recurring_installments', {'translated_name': 'recurring/installments'}),
             ('recurring_failure_threshold', {'translated_name': 'recurring/failureThreshold', 'required': False}),
         )
