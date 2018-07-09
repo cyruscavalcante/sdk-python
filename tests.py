@@ -4,6 +4,8 @@ import unittest
 from datetime import date
 from maxipago import Maxipago, exceptions
 from maxipago.utils import payment_processors
+# from maxipago.resources import customer, card
+import maxipago.requesters
 from random import randint
 
 
