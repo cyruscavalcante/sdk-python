@@ -1,7 +1,7 @@
 # coding: utf-8
 import requests
 from maxipago.exceptions import HttpErrorException
-from maxipago.utils import etree, create_element_recursively
+from maxipago.utils.xml import *
 
 class Manager(object):
     api_type = None
@@ -58,7 +58,7 @@ class ManagerApi(Manager):
         request = etree.SubElement(root, 'request')
 
         for key, value in params:
-            create_element_recursively(request, key).text = value
+            create_element_recursively(request, key).text = str(value)
 
         xml_data = etree.tostring(root, pretty_print=True, encoding='UTF-8', xml_declaration=True)
 
